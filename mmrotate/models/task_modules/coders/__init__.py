@@ -7,10 +7,11 @@ from .delta_xywht_hbbox_coder import DeltaXYWHTHBBoxCoder
 from .delta_xywht_rbbox_coder import DeltaXYWHTRBBoxCoder
 from .distance_angle_point_coder import DistanceAnglePointCoder
 from .gliding_vertex_coder import GVFixCoder, GVRatioCoder
+from .distance_angle_point_coder_edgeswap import DistanceAnglePointCoderEdgeSwap
 
 __all__ = [
     'DeltaXYWHTRBBoxCoder', 'DeltaXYWHTHBBoxCoder', 'MidpointOffsetCoder',
     'GVFixCoder', 'GVRatioCoder', 'CSLCoder', 'PSCCoder',
     'DistanceAnglePointCoder', 'DeltaXYWHHBBoxCoder', 'DeltaXYWHQBBoxCoder',
-    'PseudoAngleCoder'
+    'PseudoAngleCoder', 'DistanceAnglePointCoderEdgeSwap'
 ]

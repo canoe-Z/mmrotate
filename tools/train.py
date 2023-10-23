@@ -10,6 +10,8 @@ from mmengine.logging import print_log
 from mmengine.registry import RUNNERS
 from mmengine.runner import Runner
 
+from mmdet.utils import setup_cache_size_limit_of_dynamo
+
 from mmrotate.utils import register_all_modules
 
 
@@ -58,6 +60,10 @@ def parse_args():
 
 def main():
     args = parse_args()
+
+    # Reduce the number of repeated compilations and improve
+    # training speed.
+    setup_cache_size_limit_of_dynamo()
 
     # register all modules in mmdet into the registries
     # do not init the default scope here because it will be init in the runner

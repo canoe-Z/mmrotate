@@ -38,6 +38,9 @@ def get_palette(palette: Union[List[tuple], str, tuple],
     elif palette == 'hrsc':
         from mmrotate.datasets import HRSCDataset
         dataset_palette = HRSCDataset.METAINFO['palette']
+    elif palette == 'fair1m':
+        from mmrotate.datasets import FAIR1MDataset
+        dataset_palette = FAIR1MDataset.METAINFO['palette']
     elif is_str(palette):
         dataset_palette = [mmcv.color_val(palette)[::-1]] * num_classes
     else:
